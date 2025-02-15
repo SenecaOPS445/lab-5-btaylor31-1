@@ -1,25 +1,16 @@
 #!/usr/bin/env python3
-# Author ID:  btaylor31
+# Author ID: btaylor31
 
 def read_file_string(file_name):
-    """Reads the entire content of a file and returns it as a string."""
-    try:
-        with open(file_name, 'r') as f:
-            return f.read()
-    except FileNotFoundError:
-        return f"Error: {file_name} not found."
-    except Exception as e:
-        return f"Error: {str(e)}"
+    # Takes file_name as a string for a file name return string
+    with open(file_name, 'r') as f:
+        return f.read()
 
 def read_file_list(file_name):
-    """Reads the file and returns its contents as a list of lines without newline characters."""
-    try:
-        with open(file_name, 'r') as f:
-            return [line.strip() for line in f.readlines()]
-    except FileNotFoundError:
-        return [f"Error: {file_name} not found."]
-    except Exception as e:
-        return [f"Error: {str(e)}"]
+    # Takes a file_name as string for a name 
+    # returns its entire contents as a list of lines
+    with open(file_name, 'r') as f:
+        return [line.strip() for line in f.readlines()]
 
 if __name__ == '__main__':
     file_name = 'data.txt'
